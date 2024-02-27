@@ -23,6 +23,7 @@ def start(start_date, months: int):
         events.append({reclam[0]: f'Cliente {client.id} ha generado una reclamacion con un monto de {reclam[1]} dolares'})
   
   #imprimir la simulacion siguiendo un orden cronologico
+  print(f'SIMULACION DEL COMPORTAMIENTO DE LA EMPRESA POR {months} MESES:')
   result = sort_by_date(events)
   contador = 1
   
