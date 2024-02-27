@@ -22,6 +22,10 @@ def start(start_date, months: int):
       for reclam in client.reclams:
         events.append({reclam[0]: f'Cliente {client.id} ha generado una reclamacion con un monto de {reclam[1]} dolares'})
   
+      #agregar los pagos mensuales de cada cliente
+      for i in range(1, client.months):
+        events.append({str(client.inscription_date + datetime.timedelta(i * 30)): f'Cliente {client.id} pago {client.cuote} dolares a la empresa como parte de su membresia'})
+      
   #imprimir la simulacion siguiendo un orden cronologico
   print(f'SIMULACION DEL COMPORTAMIENTO DE LA EMPRESA POR {months} MESES:')
   result = sort_by_date(events)
