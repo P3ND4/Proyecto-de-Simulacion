@@ -19,5 +19,5 @@ class Client:
   @property
   def months(self) -> int: return self.__months
   @property
-  def cuote(self) -> int: return self.__cuote
+  def reclams(self) -> list: return self.__reclams
     

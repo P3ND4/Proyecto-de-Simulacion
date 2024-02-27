@@ -6,7 +6,7 @@ import datetime
 from utils import gen_id
 
 #un cliente genera una reclamacion
-def sim_reclam(client: Client):
+def sim_reclams(client: Client):
   param_poisson = 0.2 #tasa de reclamaciones por mes
   reclams = list(poisson.rvs(param_poisson, size = client.months)) #generar las reclamaciones por mes de cada cliente
   
