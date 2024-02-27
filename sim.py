@@ -2,7 +2,9 @@
 from client import Client
 import random
 from scipy.stats import poisson
-import datetime
+import datetime 
+
+#metodos auxiliares
 from utils import gen_id
 
 #un cliente genera una reclamacion
@@ -47,5 +49,4 @@ def sim_inscriptions(date) -> list:
     
   return result    
 
-#print(sim_inscriptions(datetime.date(2024, 2, 26)))
     

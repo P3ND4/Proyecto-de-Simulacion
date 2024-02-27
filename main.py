@@ -1,8 +1,12 @@
+#dependencias
 from sim import sim_inscriptions, sim_reclams
 import datetime
 import time
+
+#metodos auxiliares
 from utils import sort_by_date, compare_dates
 
+#simulacion del funcionamiento de la empresa
 def start(start_date, months: int):
   #aqui guardaremos todos los eventos
   events = []
@@ -30,5 +34,5 @@ def start(start_date, months: int):
     contador += 1
     time.sleep(1)
 
-start(datetime.date(2024, 2, 26), 5)
+#start(datetime.date(2024, 2, 26), 5)
   

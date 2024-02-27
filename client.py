@@ -1,4 +1,5 @@
 class Client:
+  #cosas que puede hacer un cliente
   def __init__(self, id: str, inscription_date, months: int, reclams: list):
     self.__id = id #nombre del cliente
     self.__inscription_date = inscription_date #fecha en que se iscribio
