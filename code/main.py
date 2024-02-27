@@ -39,5 +39,5 @@ def start(start_date, months: int):
     contador += 1
     time.sleep(1)
 
-#start(datetime.date(2024, 2, 26), 5)
+start(datetime.date(2024, 2, 26), 5)
   
