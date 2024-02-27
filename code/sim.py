@@ -44,7 +44,7 @@ def sim_inscriptions(date) -> list:
   for i in range(len(inscriptions)):  
     for j in range(inscriptions[i]):
       inscription_date = date + datetime.timedelta(i)
-      client = Client(gen_id(), inscription_date, random.randint(6, 24), sim_cuote(), [])
+      client = Client(gen_id(), inscription_date, sim_month(), sim_cuote(), [])
       result.append(client)
     
   return result    
@@ -55,3 +55,11 @@ def sim_cuote() -> float:
   beta = 100.0 #parametro de escala
   result = round(list(gamma.rvs(alpha, scale = beta, size = 10))[0], 2)
   return  result if result > 50 else result + 50
+
+def sim_month() -> int:
+  alpha = 1 #parametro de forma
+  beta = 2.0 #parametro de escala
+  result = round(list(gamma.rvs(alpha, scale = beta, size = 10))[0], 1)
+  result_frac = result - int(result)
+  result = int(result) * 12 + int(result_frac*12)
+  return result if result > 1 else 3
