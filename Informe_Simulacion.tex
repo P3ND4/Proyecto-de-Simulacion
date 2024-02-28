@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Informe de Simulación de Eventos Discretos}
+\author{Jose Carlos Pendas Rodriguez \\ Max Bengochea More}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+El presente informe tiene como objetivo principal analizar y comprender el funcionamiento de un modelo de simulación de eventos discretos aplicado al contexto de una compañía de seguros. Se busca explorar cómo los principios de la simulación pueden ayudar a comprender mejor ciertos fenómenos relacionados con los seguros y tomar decisiones informadas.
+
+\subsection{Objetivos y Metas}
+El objetivo principal de este proyecto es desarrollar un modelo de simulación que permita analizar diferentes aspectos del negocio de seguros, incluyendo la frecuencia de reclamaciones, la tasa de incorporación de nuevos clientes y otros parámetros relevantes. Algunos de los objetivos específicos incluyen:
+
+\begin{itemize}
+  \item Modelar la llegada de nuevos clientes a la compañía de seguros.
+  \item Simular la generación de reclamaciones por parte de los asegurados.
+  \item Analizar el impacto de diferentes variables en el negocio de seguros, como las tasas de reclamación y la tasa de llegada de nuevos clientes.
+  \item Evaluar la efectividad de diferentes estrategias de gestión de riesgos y de adquisición de clientes.
+\end{itemize}
+
+\section{Detalles de Implementación}
+El modelo de simulación se implementó utilizando scypy una biblioteca de python para el uso de ciertas distribuciones. A continuación se describen los principales componentes y pasos seguidos para la implementación:
+
+\begin{itemize}
+  \item \textbf{Modelado de la llegada de nuevos clientes}: Se diseñó un proceso para simular la llegada de nuevos clientes a la compañía de seguros. Esto incluyó la selección de una distribución de Poisson para modelar el tiempo entre llegadas de nuevos clientes.
+  \item \textbf{Generación de reclamaciones}: Se desarrolló un proceso para simular la generación de reclamaciones por parte de los asegurados. Esto implicó la selección de una distribución de Poisson tambien para modelar la frecuencia de reclamaciones por persona.
+  \item \textbf{Modelado del monto de las reclamaciones}: Para simular los montos de las reclamaciones acudimos a una distribución Gamma.
+  \item \textbf{Análisis de resultados}: Se implementó un conjunto de métricas para evaluar el desempeño del modelo y analizar los resultados obtenidos durante la simulación.
+\end{itemize}
+
+\section{Resultados y Experimentos}
+Durante la simulación, se llevaron a cabo una serie de experimentos para analizar diferentes aspectos del negocio de seguros. A continuación se presentan los hallazgos y resultados obtenidos:
+
+\subsection{Llegada de Nuevos Clientes}
+Como usamos una distribucion de Poisson usando una taza de inscripcion diaria de 1.7 luego de simular 6 meses se optuvo una media de 55 inscripciones mensuales para un total de 330
+
+\subsection{Generación de Reclamaciones}
+Usando Tambien la distribucion de Poisson y una taza mensual del 0.008 reclamaciones por cliente se obtuvo 10 reclamaciones en 6 meses
+
+\subsection{An\'{a}lisis de las ganancias}
+En 6 meses simulados se generaron 95308.78 dolares, aproximadamente 15884.8 dolares por mes
+\subsection{Analisis de impacto de variables}
+Para una ganancia positiva fue necesario mantener generaci\'{o}n de reclamaciones en una taza sufucientemente baja en dependencia del valor de la suscripci\'{o}n de los clientes, pues si esta suscripci\'{o}n no supl\'{i}a la taza de reclamaciones el negocio, sufria p\'{e}rdidas
+
+\section{Modelo Matemático}
+En este proyecto, se utilizó un modelo de simulación de eventos discretos para modelar el funcionamiento de una compañía de seguros. A continuación se presentan los principales componentes del modelo:
+
+\begin{itemize}
+  \item \textbf{Llegada de Nuevos Clientes}: Se modeló la llegada de nuevos clientes utilizando una distribución de Poisson debido a su capacidad para representar eventos raros e independientes con una tasa de llegada constante en un intervalo de tiempo dado, su aplicación en modelos de conteo de eventos discretos y su facilidad de cálculo y aplicación en simulaciones.
+  \item \textbf{Generación de reclamaciones}: Se seleccion\'{o} una distribución de Poisson tambien para modelar la frecuencia de reclamaciones por persona, por las mismas razones que la llegada de clientes ademas de su potencial respaldo por datos empíricos históricos de reclamaciones pasadas.
+  \item \textbf{Modelado del monto de las reclamaciones}: Para simular los montos de las reclamaciones acudimos a una distribución Gamma ,debido a su capacidad para capturar la asimetría y la naturaleza no negativa de estos datos, así como su flexibilidad en la modelización de una variedad de comportamientos en los montos de reclamación.
+
+\end{itemize}
+
+\section{Supuestos y Restricciones}.
+
+    Se asume que la llegada de nuevos clientes sigue una distribución de Poisson con una tasa de inscripción diaria promedio de 1.7. Este supuesto se basa en la estabilidad y la constancia en la tasa de llegada de nuevos clientes a lo largo del tiempo, lo que justifica el uso de la distribución de Poisson para modelar este proceso.
+
+    Se supone que la generación de reclamaciones por parte de los asegurados también sigue una distribución de Poisson, con una tasa mensual de 0.008 reclamaciones por cliente.
+
+    Se impuso una restricción en la tasa de inscripción de nuevos clientes para garantizar la estabilidad financiera del negocio. Si la tasa de inscripción fuera demasiado alta, podría resultar en una carga financiera insostenible para la compañía de seguros.
+
+    Se estableció una restricción en la tasa de reclamaciones por cliente para evitar pérdidas financieras significativas para la compañía. Si la tasa de reclamaciones superara cierto umbral, podría llevar a pérdidas financieras que afectarían la viabilidad del negocio.
+\section{Conclusiones}
+En conclusión, este proyecto proporcionó una visión general del funcionamiento de un modelo de simulación de eventos discretos aplicado al negocio de seguros. Los resultados obtenidos durante la simulación proporcionaron información valiosa sobre diferentes aspectos del negocio de seguros y pueden ser utilizados para tomar decisiones informadas en el futuro.
+
+\end{document}
