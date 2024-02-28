@@ -60,5 +60,5 @@ def start(start_date, presp: float, months: int):
     contador += 1
     time.sleep(1)
 
-start(datetime.date(2024, 2, 26), 100.0, 12)
+start(datetime.date(2024, 2, 26), 100.0, 6)
   
