@@ -9,7 +9,7 @@ from utils import gen_id
 
 #un cliente genera una reclamacion
 def sim_reclams(client: Client):
-  param_poisson = 0.08 #tasa de reclamaciones por mes
+  param_poisson = 0.008 #tasa de reclamaciones por mes
   reclams = list(poisson.rvs(param_poisson, size = client.months)) #generar las reclamaciones por mes de cada cliente
   
   for i in range(len(reclams)):
