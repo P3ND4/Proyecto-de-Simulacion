@@ -16,7 +16,7 @@ def sim_reclams(client: Client):
     if reclams[i] == 0:
       continue
     
-    mount = round(random.uniform(5000.0, 100000.0), 2)
+    mount = sim_mount_reclam()
     reclams_month = gen_dates_reclams(i, reclams[i], client)
     
     for date in reclams_month:
@@ -63,3 +63,10 @@ def sim_month() -> int:
   result_frac = result - int(result)
   result = int(result) * 12 + int(result_frac*12)
   return result if result > 1 else 3
+
+#generar el monto de reclamacion de un cliente
+def sim_mount_reclam() -> float:
+  alpha = 4.5 #parametro de forma
+  beta = 300.0 #parametro de escala
+  result = round(list(gamma.rvs(alpha, scale = beta, size = 10))[0], 2)
+  return result
